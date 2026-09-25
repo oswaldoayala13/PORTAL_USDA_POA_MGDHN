@@ -10,7 +10,9 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Portal USDA - POA MGDHN</title>
+  <title>
+    Portal USDA - Partners of the Americas - McGovern-Dole Honduras
+  </title>
 
 
   <style>
@@ -48,15 +50,16 @@
 
 
     /* =====================================================
-       ENCABEZADO
+       ENCABEZADO INSTITUCIONAL
        ===================================================== */
 
     .header {
 
       width: 100%;
-      height: 76px;
 
-      background: #005b96;
+      height: 92px;
+
+      background: #E85D3F;
 
       color: white;
 
@@ -64,7 +67,7 @@
 
       align-items: center;
 
-      padding: 0 25px;
+      padding: 0 28px;
 
       box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.18);
@@ -78,6 +81,8 @@
 
     .title-area {
 
+      width: 100%;
+
       min-width: 0;
 
     }
@@ -87,22 +92,13 @@
 
       margin: 0;
 
-      font-size: 23px;
+      font-size: 18px;
 
       font-weight: 600;
 
-      line-height: 1.2;
+      line-height: 1.3;
 
-    }
-
-
-    .title-area p {
-
-      margin: 4px 0 0 0;
-
-      font-size: 13px;
-
-      opacity: 0.92;
+      max-width: 1500px;
 
     }
 
@@ -137,6 +133,12 @@
 
       z-index: 20;
 
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      scrollbar-width: thin;
+
     }
 
 
@@ -163,7 +165,8 @@
 
       height: 36px;
 
-      border: 1px solid #d5e0e7;
+      border:
+        1px solid #d5e0e7;
 
       background: #f7f9fb;
 
@@ -186,27 +189,29 @@
         color 0.2s ease,
         border 0.2s ease;
 
+      flex-shrink: 0;
+
     }
 
 
     .category-button:hover {
 
-      background: #eaf3f8;
+      background: #fff0ec;
 
-      color: #005b96;
+      color: #d94d32;
 
-      border-color: #b9d2e1;
+      border-color: #e7aa9c;
 
     }
 
 
     .category-button.active {
 
-      background: #005b96;
+      background: #E85D3F;
 
       color: white;
 
-      border-color: #005b96;
+      border-color: #E85D3F;
 
     }
 
@@ -286,16 +291,16 @@
 
     .tab:hover {
 
-      background: #eaf3f8;
+      background: #fff0ec;
 
-      color: #005b96;
+      color: #d94d32;
 
     }
 
 
     .tab.active {
 
-      background: #005b96;
+      background: #E85D3F;
 
       color: white;
 
@@ -305,7 +310,7 @@
 
 
     /* =====================================================
-       TABS OCULTAS POR FILTRO
+       MÓDULOS OCULTOS POR FILTRO
        ===================================================== */
 
     .tab.hidden {
@@ -363,7 +368,7 @@
       width: 100%;
 
       height:
-        calc(100vh - 192px);
+        calc(100vh - 208px);
 
       overflow: hidden;
 
@@ -381,9 +386,11 @@
       position: absolute;
 
       top: 0;
+
       left: 0;
 
       width: 100%;
+
       height: 100%;
 
       border: none;
@@ -416,7 +423,7 @@
 
       z-index: 10;
 
-      color: #005b96;
+      color: #d94d32;
 
       font-size: 16px;
 
@@ -443,10 +450,10 @@
       height: 27px;
 
       border:
-        3px solid #d9e7ef;
+        3px solid #f5d9d2;
 
       border-top:
-        3px solid #005b96;
+        3px solid #E85D3F;
 
       border-radius: 50%;
 
@@ -475,6 +482,13 @@
 
     @media (max-width: 1100px) {
 
+      .title-area h1 {
+
+        font-size: 16px;
+
+      }
+
+
       .category-button {
 
         padding: 0 14px;
@@ -490,13 +504,6 @@
 
       }
 
-
-      .title-area h1 {
-
-        font-size: 21px;
-
-      }
-
     }
 
 
@@ -508,7 +515,7 @@
 
       .header {
 
-        height: 70px;
+        height: 82px;
 
         padding: 0 16px;
 
@@ -517,27 +524,18 @@
 
       .title-area h1 {
 
-        font-size: 19px;
+        font-size: 15px;
+
+        line-height: 1.25;
 
       }
 
-
-      .title-area p {
-
-        font-size: 11px;
-
-      }
-
-
-      /* Categorías */
 
       .category-bar {
 
         height: 55px;
 
         padding: 0 10px;
-
-        overflow-x: auto;
 
         justify-content: flex-start;
 
@@ -555,12 +553,8 @@
 
         padding: 0 14px;
 
-        flex-shrink: 0;
-
       }
 
-
-      /* Navegación */
 
       .navigation {
 
@@ -588,7 +582,7 @@
       .viewer {
 
         height:
-          calc(100vh - 183px);
+          calc(100vh - 195px);
 
       }
 
@@ -601,16 +595,16 @@
 
     @media (max-width: 500px) {
 
-      .title-area h1 {
+      .header {
 
-        font-size: 16px;
+        height: 88px;
 
       }
 
 
-      .title-area p {
+      .title-area h1 {
 
-        display: none;
+        font-size: 13px;
 
       }
 
@@ -620,6 +614,14 @@
         min-width: 190px;
 
         max-width: 100%;
+
+      }
+
+
+      .viewer {
+
+        height:
+          calc(100vh - 201px);
 
       }
 
@@ -642,12 +644,13 @@
     <div class="title-area">
 
       <h1>
-        Portal USDA – POA MGDHN
-      </h1>
 
-      <p>
-        Panel integrado de seguimiento y análisis
-      </p>
+        Portal United States Department of Agriculture (USDA)
+        - PARTNERS of the AMERICAS (POA) -
+        McGovern-Dole Alimentos para la Educación y Nutrición
+        Infantil – Honduras
+
+      </h1>
 
     </div>
 
@@ -717,7 +720,7 @@
 
 
     <!-- =================================================
-         ALE 1
+         1. ALE - LIDERAZGO
          ================================================= -->
 
     <button
@@ -725,13 +728,15 @@
       data-categoria="ALE"
       onclick="cargarDashboard(0)"
     >
+
       ALE_ Taller Liderazgo Docente
+
     </button>
 
 
 
     <!-- =================================================
-         ALE 2
+         2. ALE - CAE
          ================================================= -->
 
     <button
@@ -739,13 +744,15 @@
       data-categoria="ALE"
       onclick="cargarDashboard(1)"
     >
+
       ALE_ Manejo de Seguro de alimentos CAE
+
     </button>
 
 
 
     <!-- =================================================
-         WASH 1
+         3. WASH - ACTA
          ================================================= -->
 
     <button
@@ -753,13 +760,15 @@
       data-categoria="WASH"
       onclick="cargarDashboard(2)"
     >
+
       WASH_ Acta de entrega de material por Centro Educativo
+
     </button>
 
 
 
     <!-- =================================================
-         ALE 3
+         4. ALE - MANTENIMIENTO
          ================================================= -->
 
     <button
@@ -767,13 +776,15 @@
       data-categoria="ALE"
       onclick="cargarDashboard(3)"
     >
+
       Ale_ Registro de actividades de mantenimiento
+
     </button>
 
 
 
     <!-- =================================================
-         EDU
+         5. EDU - ACOMPAÑAMIENTO
          ================================================= -->
 
     <button
@@ -781,13 +792,15 @@
       data-categoria="EDU"
       onclick="cargarDashboard(4)"
     >
+
       EDU_ Acompañamiento y Monitoreo
+
     </button>
 
 
 
     <!-- =================================================
-         WASH 2
+         6. WASH - OPERACIÓN
          ================================================= -->
 
     <button
@@ -795,7 +808,9 @@
       data-categoria="WASH"
       onclick="cargarDashboard(5)"
     >
+
       WASH_ Operacion y Mantenimiento
+
     </button>
 
 
@@ -894,32 +909,38 @@
 
 
     /* =====================================================
-       DASHBOARDS
+       URL DE LOS 6 DASHBOARDS
        ===================================================== */
 
     const dashboards = [
 
       // 0 - ALE_ Taller Liderazgo Docente
+
       "https://oswaldoayala13.github.io/Taller-de-Liderazgo-Docente/",
 
 
       // 1 - ALE_ Manejo de Seguro de alimentos CAE
+
       "https://oswaldoayala13.github.io/ALE_Manejo-de-seguro-de-alimentos-CAE/",
 
 
       // 2 - WASH_ Acta de entrega de material por Centro Educativo
+
       "https://oswaldoayala13.github.io/WASH-CENTRO-EDUCATIVO/",
 
 
       // 3 - Ale_ Registro de actividades de mantenimiento
+
       "https://oswaldoayala13.github.io/ALE_MANTENIMIENTO/",
 
 
       // 4 - EDU_ Acompañamiento y Monitoreo
+
       "https://oswaldoayala13.github.io/EDU_ACOMPANAMIENTO/",
 
 
       // 5 - WASH_ Operacion y Mantenimiento
+
       "https://oswaldoayala13.github.io/WASH_Operacion_y_mantenimiento/"
 
     ];
@@ -927,21 +948,16 @@
 
 
     /* =====================================================
-       CATEGORÍAS
+       CATEGORÍAS DE CADA DASHBOARD
        ===================================================== */
 
     const categorias = [
 
       "ALE",
-
       "ALE",
-
       "WASH",
-
       "ALE",
-
       "EDU",
-
       "WASH"
 
     ];
@@ -1049,9 +1065,9 @@
     function filtrarCategoria(categoria) {
 
 
-      /* ---------------------------------------------
+      /* -------------------------------------------------
          Actualizar botón activo
-         --------------------------------------------- */
+         ------------------------------------------------- */
 
       categoryButtons.forEach(
         button => {
@@ -1084,9 +1100,9 @@
 
 
 
-      /* ---------------------------------------------
+      /* -------------------------------------------------
          Mostrar / ocultar módulos
-         --------------------------------------------- */
+         ------------------------------------------------- */
 
       let primerModulo = null;
 
@@ -1134,9 +1150,9 @@
 
 
 
-      /* ---------------------------------------------
+      /* -------------------------------------------------
          Cargar primer módulo
-         --------------------------------------------- */
+         ------------------------------------------------- */
 
       if (
         primerModulo !== null
