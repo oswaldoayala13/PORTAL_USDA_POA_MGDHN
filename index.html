@@ -1,655 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Portal USDA - Partners of the Americas - McGovern-Dole Honduras
-  </title>
-
+  <title>Portal USDA - POA - McGovern-Dole Honduras</title>
 
   <style>
 
-    /* =====================================================
-       CONFIGURACIÓN GENERAL
-       ===================================================== */
-
     * {
       box-sizing: border-box;
-    }
-
-    html,
-    body {
-
       margin: 0;
       padding: 0;
-
-      width: 100%;
-      height: 100%;
-
-      font-family:
-        "Segoe UI",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      background: #f3f6f9;
-
-      color: #243447;
-
-      overflow: hidden;
-
     }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      overflow: hidden;
+    }
 
-    /* =====================================================
-       ENCABEZADO INSTITUCIONAL
-       ===================================================== */
+    /* =========================
+       ENCABEZADO
+       ========================= */
 
     .header {
-
-      width: 100%;
-
       height: 92px;
-
       background: #E85D3F;
-
       color: white;
-
       display: flex;
-
       align-items: center;
-
-      padding: 0 28px;
-
-      box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.18);
-
+      justify-content: center;
+      padding: 10px 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.20);
       position: relative;
-
-      z-index: 20;
-
+      z-index: 10;
     }
-
 
     .title-area {
-
       width: 100%;
-
-      min-width: 0;
-
+      text-align: center;
     }
-
 
     .title-area h1 {
-
-      margin: 0;
-
-      font-size: 18px;
-
-      font-weight: 600;
-
-      line-height: 1.3;
-
-      max-width: 1500px;
-
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 700;
+      max-width: 1400px;
+      margin: auto;
     }
 
-
-    /* =====================================================
+    /* =========================
        BARRA DE CATEGORÍAS
-       ===================================================== */
+       ========================= */
 
     .category-bar {
-
-      width: 100%;
-
-      height: 58px;
-
+      height: 52px;
       background: #ffffff;
-
       display: flex;
-
       align-items: center;
-
-      gap: 8px;
-
-      padding: 0 18px;
-
-      border-bottom:
-        1px solid #d9e1e8;
-
-      box-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.08);
-
+      justify-content: center;
+      gap: 10px;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
       position: relative;
-
-      z-index: 20;
-
-      overflow-x: auto;
-
-      overflow-y: hidden;
-
-      scrollbar-width: thin;
-
+      z-index: 9;
     }
-
 
     .category-label {
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-      color: #4d6272;
-
+      font-weight: bold;
+      color: #555;
       margin-right: 5px;
-
-      white-space: nowrap;
-
     }
-
-
-    /* =====================================================
-       BOTONES DE CATEGORÍA
-       ===================================================== */
 
     .category-button {
-
-      height: 36px;
-
-      border:
-        1px solid #d5e0e7;
-
-      background: #f7f9fb;
-
-      padding: 0 20px;
-
-      border-radius: 6px;
-
+      border: none;
+      padding: 8px 22px;
+      border-radius: 20px;
+      background: #eeeeee;
+      color: #555;
+      font-weight: bold;
       cursor: pointer;
-
-      color: #4d6272;
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-      white-space: nowrap;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border 0.2s ease;
-
-      flex-shrink: 0;
-
+      transition: all 0.2s ease;
     }
-
 
     .category-button:hover {
-
-      background: #fff0ec;
-
-      color: #d94d32;
-
-      border-color: #e7aa9c;
-
+      background: #ddd;
     }
-
 
     .category-button.active {
-
       background: #E85D3F;
-
       color: white;
-
-      border-color: #E85D3F;
-
     }
 
-
-    /* =====================================================
-       BARRA DE MÓDULOS
-       ===================================================== */
+    /* =========================
+       NAVEGACIÓN
+       ========================= */
 
     .navigation {
-
-      width: 100%;
-
-      height: 58px;
-
+      height: 64px;
       background: #ffffff;
-
       display: flex;
-
       align-items: center;
-
-      gap: 5px;
-
-      padding: 0 14px;
-
-      border-bottom:
-        1px solid #d9e1e8;
-
+      justify-content: center;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
       position: relative;
-
-      z-index: 19;
-
+      z-index: 8;
       overflow-x: auto;
-
-      overflow-y: hidden;
-
-      scrollbar-width: thin;
-
     }
-
-
-    /* =====================================================
-       PESTAÑAS DE MÓDULOS
-       ===================================================== */
 
     .tab {
-
-      height: 38px;
-
+      height: 100%;
+      padding: 0 18px;
       border: none;
-
       background: transparent;
-
-      padding: 0 15px;
-
-      border-radius: 6px;
-
+      color: #555;
+      font-size: 14px;
+      font-weight: bold;
       cursor: pointer;
-
-      color: #4d6272;
-
-      font-size: 13px;
-
-      font-weight: 500;
-
+      border-bottom: 4px solid transparent;
       white-space: nowrap;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-
-      flex-shrink: 0;
-
-      display: block;
-
+      transition: all 0.2s ease;
     }
-
 
     .tab:hover {
-
-      background: #fff0ec;
-
-      color: #d94d32;
-
+      background: #f5f5f5;
+      color: #E85D3F;
     }
-
 
     .tab.active {
-
-      background: #E85D3F;
-
-      color: white;
-
-      font-weight: 600;
-
+      color: #E85D3F;
+      border-bottom: 4px solid #E85D3F;
+      background: #fff7f5;
     }
-
-
-    /* =====================================================
-       MÓDULOS OCULTOS POR FILTRO
-       ===================================================== */
 
     .tab.hidden {
-
       display: none;
-
     }
 
-
-    /* =====================================================
-       SELECTOR PARA CELULARES
-       ===================================================== */
+    /* =========================
+       SELECTOR PARA MÓVIL
+       ========================= */
 
     .selector {
-
       display: none;
-
-      margin-left: auto;
-
-      flex-shrink: 0;
-
+      width: 100%;
+      padding: 8px 15px;
     }
-
 
     .selector select {
-
-      padding: 9px 12px;
-
-      border:
-        1px solid #ccd6df;
-
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 6px;
-
-      background: white;
-
-      color: #243447;
-
       font-size: 14px;
-
-      min-width: 240px;
-
-      outline: none;
-
+      background: white;
     }
 
-
-    /* =====================================================
-       ÁREA DEL DASHBOARD
-       ===================================================== */
+    /* =========================
+       VISOR
+       ========================= */
 
     .viewer {
-
       position: relative;
-
       width: 100%;
-
-      height:
-        calc(100vh - 208px);
-
-      overflow: hidden;
-
+      height: calc(100vh - 208px);
       background: #ffffff;
-
     }
 
-
-    /* =====================================================
-       IFRAME
-       ===================================================== */
-
-    iframe {
-
-      position: absolute;
-
-      top: 0;
-
-      left: 0;
-
+    #dashboard {
       width: 100%;
-
       height: 100%;
-
       border: none;
-
       display: block;
-
-      background: #ffffff;
-
+      background: white;
     }
 
-
-    /* =====================================================
-       PANTALLA DE CARGA
-       ===================================================== */
+    /* =========================
+       CARGANDO
+       ========================= */
 
     .loading {
-
       position: absolute;
-
       inset: 0;
-
+      background: rgba(255,255,255,0.90);
       display: flex;
-
-      align-items: center;
-
+      flex-direction: column;
       justify-content: center;
-
-      background:
-        rgba(255, 255, 255, 0.97);
-
-      z-index: 10;
-
-      color: #d94d32;
-
-      font-size: 16px;
-
-      font-weight: 500;
-
-    }
-
-
-    .loading-content {
-
-      display: flex;
-
       align-items: center;
-
-      gap: 12px;
-
+      z-index: 5;
     }
-
 
     .spinner {
-
-      width: 27px;
-
-      height: 27px;
-
-      border:
-        3px solid #f5d9d2;
-
-      border-top:
-        3px solid #E85D3F;
-
+      width: 45px;
+      height: 45px;
+      border: 5px solid #ddd;
+      border-top: 5px solid #E85D3F;
       border-radius: 50%;
-
-      animation:
-        spin 0.8s linear infinite;
-
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
     }
 
+    .loading-text {
+      color: #555;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
     @keyframes spin {
-
-      from {
+      0% {
         transform: rotate(0deg);
       }
 
-      to {
+      100% {
         transform: rotate(360deg);
       }
-
     }
 
-
-    /* =====================================================
-       TABLET
-       ===================================================== */
+    /* =========================
+       RESPONSIVE
+       ========================= */
 
     @media (max-width: 1100px) {
 
       .title-area h1 {
-
-        font-size: 16px;
-
+        font-size: 18px;
       }
-
-
-      .category-button {
-
-        padding: 0 14px;
-
-      }
-
 
       .tab {
-
-        padding: 0 11px;
-
+        padding: 0 12px;
         font-size: 12px;
-
       }
 
     }
 
+    @media (max-width: 768px) {
 
-    /* =====================================================
-       CELULAR
-       ===================================================== */
-
-    @media (max-width: 850px) {
+      body {
+        overflow: auto;
+      }
 
       .header {
-
-        height: 82px;
-
-        padding: 0 16px;
-
+        height: auto;
+        min-height: 95px;
+        padding: 15px;
       }
-
 
       .title-area h1 {
-
-        font-size: 15px;
-
-        line-height: 1.25;
-
+        font-size: 16px;
       }
-
 
       .category-bar {
-
-        height: 55px;
-
-        padding: 0 10px;
-
-        justify-content: flex-start;
-
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
       }
-
-
-      .category-label {
-
-        display: none;
-
-      }
-
 
       .category-button {
-
-        padding: 0 14px;
-
+        padding: 7px 15px;
+        font-size: 12px;
       }
-
 
       .navigation {
-
         height: 58px;
-
-        justify-content: flex-end;
-
       }
 
-
-      .tab {
-
+      .navigation .tab {
         display: none;
-
       }
 
-
-      .selector {
-
+      .navigation .selector {
         display: block;
-
       }
-
 
       .viewer {
-
-        height:
-          calc(100vh - 195px);
-
-      }
-
-    }
-
-
-    /* =====================================================
-       CELULARES PEQUEÑOS
-       ===================================================== */
-
-    @media (max-width: 500px) {
-
-      .header {
-
-        height: 88px;
-
-      }
-
-
-      .title-area h1 {
-
-        font-size: 13px;
-
-      }
-
-
-      .selector select {
-
-        min-width: 190px;
-
-        max-width: 100%;
-
-      }
-
-
-      .viewer {
-
-        height:
-          calc(100vh - 201px);
-
+        height: calc(100vh - 250px);
+        min-height: 500px;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
-
-  <!-- =====================================================
+  <!-- =========================
        ENCABEZADO
-       ===================================================== -->
+       ========================= -->
 
   <header class="header">
 
     <div class="title-area">
 
       <h1>
-
         Portal United States Department of Agriculture (USDA)
         - PARTNERS of the AMERICAS (POA) -
         McGovern-Dole Alimentos para la Educación y Nutrición
         Infantil – Honduras
-
       </h1>
 
     </div>
@@ -657,10 +307,9 @@
   </header>
 
 
-
-  <!-- =====================================================
-       FILTRO DE CATEGORÍAS
-       ===================================================== -->
+  <!-- =========================
+       CATEGORÍAS
+       ========================= -->
 
   <div class="category-bar">
 
@@ -668,185 +317,156 @@
       Categoría:
     </span>
 
-
-    <!-- TODOS -->
-
     <button
       class="category-button active"
-      onclick="filtrarCategoria('TODOS')"
-    >
+      onclick="filtrarCategoria('TODOS')">
       Todos
     </button>
 
-
-    <!-- ALE -->
-
     <button
       class="category-button"
-      onclick="filtrarCategoria('ALE')"
-    >
+      onclick="filtrarCategoria('ALE')">
       ALE
     </button>
 
-
-    <!-- WASH -->
-
     <button
       class="category-button"
-      onclick="filtrarCategoria('WASH')"
-    >
+      onclick="filtrarCategoria('WASH')">
       WASH
     </button>
 
-
-    <!-- EDU -->
-
     <button
       class="category-button"
-      onclick="filtrarCategoria('EDU')"
-    >
+      onclick="filtrarCategoria('EDU')">
       EDU
     </button>
 
   </div>
 
 
-
-  <!-- =====================================================
+  <!-- =========================
        NAVEGACIÓN DE MÓDULOS
-       ===================================================== -->
+       ========================= -->
 
   <nav class="navigation">
 
-
-    <!-- =================================================
-         1. ALE - LIDERAZGO
-         ================================================= -->
+    <!-- ALE 1 -->
 
     <button
       class="tab active"
       data-categoria="ALE"
-      onclick="cargarDashboard(0)"
-    >
+      onclick="cargarDashboard(0)">
 
       ALE_ Taller Liderazgo Docente
 
     </button>
 
 
-
-    <!-- =================================================
-         2. ALE - CAE
-         ================================================= -->
+    <!-- ALE 2 - NUEVO -->
 
     <button
       class="tab"
       data-categoria="ALE"
-      onclick="cargarDashboard(1)"
-    >
+      onclick="cargarDashboard(1)">
+
+      ALE_ Evaluacion Rapida Taller Liderazgo Docente
+
+    </button>
+
+
+    <!-- ALE 3 -->
+
+    <button
+      class="tab"
+      data-categoria="ALE"
+      onclick="cargarDashboard(2)">
 
       ALE_ Manejo de Seguro de alimentos CAE
 
     </button>
 
 
-
-    <!-- =================================================
-         3. WASH - ACTA
-         ================================================= -->
+    <!-- WASH 1 -->
 
     <button
       class="tab"
       data-categoria="WASH"
-      onclick="cargarDashboard(2)"
-    >
+      onclick="cargarDashboard(3)">
 
       WASH_ Acta de entrega de material por Centro Educativo
 
     </button>
 
 
-
-    <!-- =================================================
-         4. ALE - MANTENIMIENTO
-         ================================================= -->
+    <!-- ALE 4 -->
 
     <button
       class="tab"
       data-categoria="ALE"
-      onclick="cargarDashboard(3)"
-    >
+      onclick="cargarDashboard(4)">
 
       Ale_ Registro de actividades de mantenimiento
 
     </button>
 
 
-
-    <!-- =================================================
-         5. EDU - ACOMPAÑAMIENTO
-         ================================================= -->
+    <!-- EDU -->
 
     <button
       class="tab"
       data-categoria="EDU"
-      onclick="cargarDashboard(4)"
-    >
+      onclick="cargarDashboard(5)">
 
       EDU_ Acompañamiento y Monitoreo
 
     </button>
 
 
-
-    <!-- =================================================
-         6. WASH - OPERACIÓN
-         ================================================= -->
+    <!-- WASH 2 -->
 
     <button
       class="tab"
       data-categoria="WASH"
-      onclick="cargarDashboard(5)"
-    >
+      onclick="cargarDashboard(6)">
 
       WASH_ Operacion y Mantenimiento
 
     </button>
 
 
-
-    <!-- =================================================
-         SELECTOR PARA CELULAR
-         ================================================= -->
+    <!-- SELECTOR MÓVIL -->
 
     <div class="selector">
 
       <select
         id="dashboardSelect"
-        onchange="cargarDashboard(this.value)"
-      >
+        onchange="cargarDashboard(this.value)">
 
         <option value="0">
           ALE_ Taller Liderazgo Docente
         </option>
 
         <option value="1">
-          ALE_ Manejo de Seguro de alimentos CAE
+          ALE_ Evaluacion Rapida Taller Liderazgo Docente
         </option>
 
         <option value="2">
-          WASH_ Acta de entrega de material por Centro Educativo
+          ALE_ Manejo de Seguro de alimentos CAE
         </option>
 
         <option value="3">
-          Ale_ Registro de actividades de mantenimiento
+          WASH_ Acta de entrega de material por Centro Educativo
         </option>
 
         <option value="4">
-          EDU_ Acompañamiento y Monitoreo
+          Ale_ Registro de actividades de mantenimiento
         </option>
 
         <option value="5">
+          EDU_ Acompañamiento y Monitoreo
+        </option>
+
+        <option value="6">
           WASH_ Operacion y Mantenimiento
         </option>
 
@@ -857,102 +477,90 @@
   </nav>
 
 
-
-  <!-- =====================================================
+  <!-- =========================
        VISOR
-       ===================================================== -->
+       ========================= -->
 
   <main class="viewer">
 
-
-    <!-- PANTALLA DE CARGA -->
-
     <div
       class="loading"
-      id="loading"
-    >
+      id="loading">
 
-      <div class="loading-content">
+      <div class="spinner"></div>
 
-        <div class="spinner"></div>
-
-        <span>
-          Cargando dashboard...
-        </span>
-
+      <div class="loading-text">
+        Cargando dashboard...
       </div>
 
     </div>
 
 
-
-    <!-- DASHBOARD -->
-
     <iframe
       id="dashboard"
-      title="Dashboard"
-      src=""
-      allowfullscreen
-    >
-    </iframe>
+      title="Dashboard">
 
+    </iframe>
 
   </main>
 
 
-
-  <!-- =====================================================
+  <!-- =========================
        JAVASCRIPT
-       ===================================================== -->
+       ========================= -->
 
   <script>
 
-
-    /* =====================================================
-       URL DE LOS 6 DASHBOARDS
-       ===================================================== */
+    /* =========================
+       DASHBOARDS
+       ========================= */
 
     const dashboards = [
 
-      // 0 - ALE_ Taller Liderazgo Docente
+      /* 0 - ALE */
 
       "https://oswaldoayala13.github.io/Taller-de-Liderazgo-Docente/",
 
 
-      // 1 - ALE_ Manejo de Seguro de alimentos CAE
+      /* 1 - ALE NUEVO */
+
+      "https://oswaldoayala13.github.io/ALE_Evaluacion_Rapida_Taller-liderazgo-docente/",
+
+
+      /* 2 - ALE */
 
       "https://oswaldoayala13.github.io/ALE_Manejo-de-seguro-de-alimentos-CAE/",
 
 
-      // 2 - WASH_ Acta de entrega de material por Centro Educativo
+      /* 3 - WASH */
 
       "https://oswaldoayala13.github.io/WASH-CENTRO-EDUCATIVO/",
 
 
-      // 3 - Ale_ Registro de actividades de mantenimiento
+      /* 4 - ALE */
 
       "https://oswaldoayala13.github.io/ALE_MANTENIMIENTO/",
 
 
-      // 4 - EDU_ Acompañamiento y Monitoreo
+      /* 5 - EDU */
 
       "https://oswaldoayala13.github.io/EDU_ACOMPANAMIENTO/",
 
 
-      // 5 - WASH_ Operacion y Mantenimiento
+      /* 6 - WASH */
 
       "https://oswaldoayala13.github.io/WASH_Operacion_y_mantenimiento/"
 
     ];
 
 
-
-    /* =====================================================
-       CATEGORÍAS DE CADA DASHBOARD
-       ===================================================== */
+    /* =========================
+       CATEGORÍAS
+       ========================= */
 
     const categorias = [
 
+      "ALE",
       "ALE",
       "ALE",
       "WASH",
@@ -963,46 +571,34 @@
     ];
 
 
-
-    /* =====================================================
-       ELEMENTOS HTML
-       ===================================================== */
+    /* =========================
+       ELEMENTOS
+       ========================= */
 
     const iframe =
       document.getElementById("dashboard");
 
-
     const loading =
       document.getElementById("loading");
-
 
     const tabs =
       document.querySelectorAll(".tab");
 
-
     const categoryButtons =
       document.querySelectorAll(".category-button");
-
 
     const selector =
       document.getElementById("dashboardSelect");
 
 
-
-    /* =====================================================
+    /* =========================
        CARGAR DASHBOARD
-       ===================================================== */
+       ========================= */
 
     function cargarDashboard(indice) {
 
+      indice = Number(indice);
 
-      /* Convertir a número */
-
-      indice =
-        Number(indice);
-
-
-      /* Validar */
 
       if (
         indice < 0 ||
@@ -1014,34 +610,29 @@
       }
 
 
-      /* Mostrar pantalla de carga */
+      /* Mostrar cargando */
 
-      loading.style.display =
-        "flex";
+      loading.style.display = "flex";
 
 
-      /* Cambiar dashboard */
+      /* Cargar dashboard */
 
       iframe.src =
         dashboards[indice];
 
 
-      /* Actualizar pestañas */
+      /* Actualizar pestaña activa */
 
       tabs.forEach(
         (tab, i) => {
 
           if (i === indice) {
 
-            tab.classList.add(
-              "active"
-            );
+            tab.classList.add("active");
 
           } else {
 
-            tab.classList.remove(
-              "active"
-            );
+            tab.classList.remove("active");
 
           }
 
@@ -1057,24 +648,19 @@
     }
 
 
-
-    /* =====================================================
+    /* =========================
        FILTRAR POR CATEGORÍA
-       ===================================================== */
+       ========================= */
 
     function filtrarCategoria(categoria) {
 
 
-      /* -------------------------------------------------
-         Actualizar botón activo
-         ------------------------------------------------- */
+      /* Actualizar botón activo */
 
       categoryButtons.forEach(
         button => {
 
-          button.classList.remove(
-            "active"
-          );
+          button.classList.remove("active");
 
         }
       );
@@ -1089,9 +675,7 @@
               .toUpperCase() === categoria
           ) {
 
-            button.classList.add(
-              "active"
-            );
+            button.classList.add("active");
 
           }
 
@@ -1099,13 +683,10 @@
       );
 
 
-
-      /* -------------------------------------------------
-         Mostrar / ocultar módulos
-         ------------------------------------------------- */
-
       let primerModulo = null;
 
+
+      /* Mostrar / ocultar módulos */
 
       tabs.forEach(
         (tab, indice) => {
@@ -1119,29 +700,21 @@
             categoriaModulo === categoria
           ) {
 
-            tab.classList.remove(
-              "hidden"
-            );
+            tab.classList.remove("hidden");
 
-
-            /*
-             * Guardar primer módulo
-             * de la categoría
-             */
 
             if (
               primerModulo === null
             ) {
 
-              primerModulo = indice;
+              primerModulo =
+                indice;
 
             }
 
           } else {
 
-            tab.classList.add(
-              "hidden"
-            );
+            tab.classList.add("hidden");
 
           }
 
@@ -1149,10 +722,8 @@
       );
 
 
-
-      /* -------------------------------------------------
-         Cargar primer módulo
-         ------------------------------------------------- */
+      /* Abrir automáticamente
+         el primer módulo */
 
       if (
         primerModulo !== null
@@ -1167,10 +738,9 @@
     }
 
 
-
-    /* =====================================================
-       CUANDO TERMINA DE CARGAR EL IFRAME
-       ===================================================== */
+    /* =========================
+       FINALIZAR CARGA
+       ========================= */
 
     iframe.addEventListener(
       "load",
@@ -1183,17 +753,13 @@
     );
 
 
-
-    /* =====================================================
-       DASHBOARD INICIAL
-       ===================================================== */
+    /* =========================
+       INICIO
+       ========================= */
 
     cargarDashboard(0);
 
-
   </script>
 
-
 </body>
-
 </html>
